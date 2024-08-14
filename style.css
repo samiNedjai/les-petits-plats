@@ -1,0 +1,145 @@
+.bodycol.mb- html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 1440px;
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    background-color: #f4f4f4;
+    max-width: 1440px;
+}
+
+/*logo*/
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.text-warning {
+    color: var(--Yellow, #ffd15b);
+    text-align: center;
+    font-family: Anton;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 800px;
+    width: 100%;
+}
+
+.text-center {
+    display: flex;
+    justify-content: center;
+}
+/* Assure que le header prend toute la largeur */
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+}
+/* image de fond dans la nav*/
+.img-fluid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Barre de recherche*/
+.input svg {
+    width: 25px;
+    height: 20px;
+}
+
+#input_main {
+    border-radius: 11px;
+    background: #fff;
+}
+
+.Loupeinput {
+    position: relative;
+    left: -2px;
+    top: 2px;
+    height: 35px;
+    background-color: #1b1b1b;
+    z-index: 10;
+    border-radius: 10px;
+    border-color: #1b1b1b;
+    margin-left: -55px;
+    font-size: 5px;
+}
+
+.Loupeinput:hover {
+    background-color: #ffd15b;
+    border-color: #ffd15b;
+}
+
+.svgCroix {
+    position: absolute;
+    right: 12%;
+    top: 55%;
+    transform: translateY(-80%);
+    cursor: pointer;
+    z-index: 10;
+    width: 13px;
+    height: 13px;
+}
+
+/* Styles spécifiques pour les cartes de recettes */
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Uniformise la hauteur de toutes les cartes */
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     /* Améliore l'espacement à l'intérieur de la carte */
+}
+
+.recipe-card .card-img-top {
+    height: 200px; /* Hauteur fixe pour les images */
+    object-fit: cover; /* Assure que l'image couvre bien l'espace sans être déformée */
+}
+
+.recipe-time {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #ffc107;
+    color: #333;
+    border-radius: 30px;
+    padding: 5px 15px;
+    font-size: 0.9em;
+}
+
+.ingredients {
+    font-size: 0.8em;
+    margin-top: auto; /* Assure que les ingrédients sont poussés en bas de la carte */
+}
+
+.ingredients h6 {
+    font-weight: bold;
+}
+
+.ingredients ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients li {
+    padding: 2px 0;
+}
+
+.card-text {
+    margin-bottom: auto; /* Assure que le texte de la recette ne se colle pas au haut */
+}
