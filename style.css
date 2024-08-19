@@ -1,145 +1,194 @@
-.bodycol.mb- html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    max-width: 1440px;
-}
-  
 body {
-    display: flex;
-    flex-direction: column;
+  font-family: "Anton", sans-serif;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-    flex-grow: 1;
-    background-color: #f4f4f4;
-    max-width: 1440px;
+  flex-grow: 1;
+  background-color: #f4f4f4;
 }
-
 /*logo*/
 #logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+  position: absolute;
+  top: 50px;
+  left: 60px;
+}
+.text__slogo {
+  color: var(--Yellow, #ffd15b);
+  text-align: center;
+  font-family: "Anton";
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 800px;
+  width: 100%;
+}
+.text__center {
+  display: flex;
+  justify-content: center;
+}
+#logo_2 {
+  font-family: "Anton", sans-serif;
+  font-size: 18px;
+  max-width: 90px;
+  width: 100%;
 }
 
-.text-warning {
-    color: var(--Yellow, #ffd15b);
-    text-align: center;
-    font-family: Anton;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    max-width: 800px;
-    width: 100%;
+.container__fluid {
+  display: flex;
+  justify-content: space-between;
 }
-
-.text-center {
-    display: flex;
-    justify-content: center;
-}
-/* Assure que le header prend toute la largeur */
-
-.container-fluid {
-    display: flex;
-    justify-content: space-between;
+/*logo*/
+/* image de fond dans la nav*/
+.img__fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* image de fond dans la nav*/
-.img-fluid {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/*filtres*/
+.custom-bg-container {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+/*filtres*/
+/* Barre de recherche*/
+.input svg {
+  width: 25px;
+  height: 20px;
+}
+#input_main {
+  color: var(--Grey, #7a7a7a);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 11px;
+  background: #fff;
+  height: 72px;
+}
+.Loupe__input {
+  position: relative;
+  left: -14px;
+  top: 10px;
+  height: 52px;
+  background-color: #1b1b1b;
+  z-index: 10;
+  border-radius: 10px;
+  border-color: #1b1b1b;
+  margin-left: -55px;
+  font-size: 5px;
+}
+.Loupe__input:hover {
+  background-color: #ffd15b;
+  border-color: #ffd15b;
+}
+.svgCroix {
+  position: absolute;
+  right: 12%;
+  top: 55%;
+  transform: translateY(-80%);
+  cursor: pointer;
+  z-index: 10;
+  width: 13px;
+  height: 13px;
 }
 
 /* Barre de recherche*/
-.input svg {
-    width: 25px;
-    height: 20px;
-}
 
-#input_main {
-    border-radius: 11px;
-    background: #fff;
+/* Cards*/
+.card-body p {
+  font-size: 14px;
+  list-style: none;
+  font-family: "Manrope";
 }
-
-.Loupeinput {
-    position: relative;
-    left: -2px;
-    top: 2px;
-    height: 35px;
-    background-color: #1b1b1b;
-    z-index: 10;
-    border-radius: 10px;
-    border-color: #1b1b1b;
-    margin-left: -55px;
-    font-size: 5px;
+.card-body h5 {
+  font-weight: bold;
+  font-family: "Anton";
+  font-weight: 400;
+  line-height: normal;
 }
-
-.Loupeinput:hover {
-    background-color: #ffd15b;
-    border-color: #ffd15b;
+.card {
+  width: 100%;
+  max-width: 380px;
+  height: 731px;
+  border-radius: 21px;
 }
-
-.svgCroix {
-    position: absolute;
-    right: 12%;
-    top: 55%;
-    transform: translateY(-80%);
-    cursor: pointer;
-    z-index: 10;
-    width: 13px;
-    height: 13px;
+.card img {
+  height: 253px;
+  object-fit: cover;
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
 }
-
-/* Styles spécifiques pour les cartes de recettes */
-.recipe-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Uniformise la hauteur de toutes les cartes */
+.card h6 {
+  color: var(--Grey, #7a7a7a);
+  font-family: "Manrope";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.08px;
 }
-
-.card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-     /* Améliore l'espacement à l'intérieur de la carte */
+.span_min {
+  width: 63px;
+  height: 26px;
+  border-radius: 14px;
+  text-align: center;
+  background-color: #ffd15b;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
-
-.recipe-card .card-img-top {
-    height: 200px; /* Hauteur fixe pour les images */
-    object-fit: cover; /* Assure que l'image couvre bien l'espace sans être déformée */
+.card:hover {
+  transform: scale(1.1);
 }
-
-.recipe-time {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background-color: #ffc107;
-    color: #333;
-    border-radius: 30px;
-    padding: 5px 15px;
-    font-size: 0.9em;
+article {
+  margin-bottom: 50px;
 }
-
-.ingredients {
-    font-size: 0.8em;
-    margin-top: auto; /* Assure que les ingrédients sont poussés en bas de la carte */
-}
-
-.ingredients h6 {
-    font-weight: bold;
-}
-
-.ingredients ul {
-    list-style: none;
-    padding: 0;
-}
-
-.ingredients li {
-    padding: 2px 0;
-}
-
 .card-text {
-    margin-bottom: auto; /* Assure que le texte de la recette ne se colle pas au haut */
+  color: var(--Black, #1b1b1b);
+  font-family: "Manrope";
+  font-size: 14px;
+  font-weight: 400;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 40px;
+  line-height: normal;
+}
+article {
+  display: flex;
+  justify-content: center;
+}
+
+.Container_ingredient {
+  font-family: "Manrope";
+  font-size: 14px;
+  display: flex;
+}
+.Container_ingredient h6 {
+  font-size: 14px;
+  color: var(--Black, #1b1b1b);
+  font-style: normal;
+  line-height: normal;
+}
+.Container_ingredient p {
+  color: var(--Grey, #7a7a7a);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.container-fluid label {
+  cursor: pointer;
+  margin-bottom: 0;
+  width: 91%;
+  max-width: 192px;
+  height: 32px;
 }
