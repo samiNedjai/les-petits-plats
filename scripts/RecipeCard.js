@@ -32,7 +32,7 @@ class RecipeCard {
   // Méthode pour générer la structure HTML de la carte
   generateCardHtml() {
     return `
-        <article>
+        <article class="col-mb-4">
                 <div class="card">
                     <img src="${this.recipe.image}"  alt="${this.recipe.name}">
                     <span class="span_min">${this.recipe.time}min</span>

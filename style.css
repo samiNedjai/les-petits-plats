@@ -28,24 +28,18 @@ main {
   max-width: 800px;
   width: 100%;
 }
-.text__center {
+.text-center {
   display: flex;
   justify-content: center;
 }
-#logo_2 {
-  font-family: "Anton", sans-serif;
-  font-size: 18px;
-  max-width: 90px;
-  width: 100%;
-}
 
-.container__fluid {
+.container-fluid {
   display: flex;
   justify-content: space-between;
 }
 /*logo*/
 /* image de fond dans la nav*/
-.img__fluid {
+.img-fluid {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -74,11 +68,10 @@ main {
   background: #fff;
   height: 72px;
 }
-.Loupe__input {
+.Loupe-input {
   position: relative;
   left: -14px;
-  top: 10px;
-  height: 52px;
+  height: 50px;
   background-color: #1b1b1b;
   z-index: 10;
   border-radius: 10px;
@@ -86,7 +79,7 @@ main {
   margin-left: -55px;
   font-size: 5px;
 }
-.Loupe__input:hover {
+.Loupe-input:hover {
   background-color: #ffd15b;
   border-color: #ffd15b;
 }
@@ -99,15 +92,136 @@ main {
   z-index: 10;
   width: 13px;
   height: 13px;
+  display: none;
 }
 
 /* Barre de recherche*/
+/* Style pour les dropdowns */
+.filter-btn {
+  display: inline-flex;
+  padding: 17px 10px;
+  align-items: center;
+  gap: 63px;
+  border-radius: 11px;
+  background: #FFF;
+  border: 1px solid #ced4da; /* Pour s'harmoniser avec le style Bootstrap */
+  color: var(--Black, #1B1B1B);
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+/* Flèche initiale dans le bouton du dropdown */
+.filter-btn svg {
+  transition: transform 0.3s ease; /* Animation douce pour la rotation */
+}
+
+/* Quand le dropdown est ouvert, la flèche tourne */
+.dropdown.show .filter-btn svg {
+  transform: rotate(180deg); /* Rotation de 180 degrés */
+}
+
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap ;
+  gap: 66px;
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.dropdown-menu {
+  /* display: none; Hidden by default */
+  /* position: absolute; */
+  padding: 10px;
+  min-width: 250px; /* Ajuste la largeur minimum du menu dropdown */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu input {
+  padding: 10px;
+  margin: 10px;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+}
+
+.dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--Grey, #7A7A7A);
+font-family: 'Manrope';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.form-control {
+  padding-right: 60px; /* Pour faire de la place pour les icônes */
+  background: #FFF;
+}
+
+.input-icons {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 17px;
+  bottom: 11px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.clear-button {
+  margin-right: 5px;
+}
+
+.total-recipes {
+  margin-top: 25px;
+  color: var(--Black, #1B1B1B);
+  font-family: 'Anton';
+  font-size: 21px;
+  font-weight: 400;
+  max-width:150px ;
+  width: 100%;
+}
 
 /* Cards*/
+/* .ContainerCards{
+ 
+} */
 .card-body p {
   font-size: 14px;
   list-style: none;
   font-family: "Manrope";
+  
 }
 .card-body h5 {
   font-weight: bold;
@@ -118,7 +232,7 @@ main {
 .card {
   width: 100%;
   max-width: 380px;
-  height: 731px;
+  height: 100%;
   border-radius: 21px;
 }
 .card img {
@@ -156,14 +270,21 @@ article {
   font-family: "Manrope";
   font-size: 14px;
   font-weight: 400;
-  height: auto;
-  overflow: hidden;
+  height: auto; /* Définit une hauteur fixe */
+  overflow: hidden; /* Cache le contenu qui dépasse */
+  text-overflow: ellipsis; /* Ajoute des points de suspension si le texte déborde */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limite le texte à quatre lignes */
+  -webkit-box-orient: vertical;
   margin-bottom: 40px;
   line-height: normal;
 }
+
 article {
   display: flex;
   justify-content: center;
+  max-width: 30%;
+ 
 }
 
 .Container_ingredient {
@@ -192,3 +313,6 @@ article {
   max-width: 192px;
   height: 32px;
 }
+
+/* respensive  */
+
