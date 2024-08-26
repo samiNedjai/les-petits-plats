@@ -17,7 +17,7 @@ main {
   top: 50px;
   left: 60px;
 }
-.text__slogo {
+.text-warning {
   color: var(--Yellow, #ffd15b);
   text-align: center;
   font-family: "Anton";
@@ -59,7 +59,7 @@ main {
 }
 #input_main {
   color: var(--Grey, #7a7a7a);
-  font-family: Manrope;
+  font-family: "Manrope";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -103,10 +103,10 @@ main {
   align-items: center;
   gap: 63px;
   border-radius: 11px;
-  background: #FFF;
+  background: #fff;
   border: 1px solid #ced4da; /* Pour s'harmoniser avec le style Bootstrap */
-  color: var(--Black, #1B1B1B);
-  font-family: 'Manrope';
+  color: var(--Black, #1b1b1b);
+  font-family: "Manrope";
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -122,28 +122,24 @@ main {
   transform: rotate(180deg); /* Rotation de 180 degrés */
 }
 
-
 .dropdown-container {
   display: flex;
   align-items: center;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
   gap: 66px;
   width: 100%;
 }
 
 .dropdown {
   position: relative;
-  /* display: inline-block; */
 }
 
 .dropdown-menu {
-  /* display: none; Hidden by default */
-  /* position: absolute; */
   padding: 10px;
   min-width: 250px; /* Ajuste la largeur minimum du menu dropdown */
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -168,17 +164,17 @@ main {
   position: relative;
   display: flex;
   align-items: center;
-  color: var(--Grey, #7A7A7A);
-font-family: 'Manrope';
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  color: var(--Grey, #7a7a7a);
+  font-family: "Manrope";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .form-control {
   padding-right: 60px; /* Pour faire de la place pour les icônes */
-  background: #FFF;
+  background: #fff;
 }
 
 .input-icons {
@@ -205,23 +201,20 @@ line-height: normal;
 
 .total-recipes {
   margin-top: 25px;
-  color: var(--Black, #1B1B1B);
-  font-family: 'Anton';
+  color: var(--Black, #1b1b1b);
+  font-family: "Anton";
   font-size: 21px;
   font-weight: 400;
-  max-width:150px ;
+  max-width: 150px;
   width: 100%;
 }
 
 /* Cards*/
-/* .ContainerCards{
- 
-} */
+
 .card-body p {
   font-size: 14px;
   list-style: none;
   font-family: "Manrope";
-  
 }
 .card-body h5 {
   font-weight: bold;
@@ -284,7 +277,6 @@ article {
   display: flex;
   justify-content: center;
   max-width: 30%;
- 
 }
 
 .Container_ingredient {
@@ -315,4 +307,153 @@ article {
 }
 
 /* respensive  */
+@media (min-width: 1024px) {
+  .card {
+    width: 95%;
+  }
+}
 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .text-warning {
+    font-size: 30px;
+    font-weight: 400;
+  }
+  #logo {
+    top: 30px;
+    left: 30px;
+  }
+  .col-12 {
+    max-width: 80%;
+  }
+  #loupe-input {
+    position: relative;
+    top: 0px;
+    width: 51px;
+    height: 52px;
+  }
+  .dropdown-container {
+    flex-wrap: nowrap;
+    gap: 30px;
+  }
+  .total-recipes {
+    font-size: 19px;
+    font-weight: 300;
+    max-width: 90px;
+  }
+  .card {
+    width: 90%;
+  }
+}
+@media (max-width: 767px) and (min-width: 425px) {
+  .text-warning {
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+  #logo {
+    top: 15px;
+    left: 15px;
+  }
+  #logo svg {
+    height: 20px;
+    width: 150px;
+    left: 30px;
+  }
+  .col-12 {
+    max-width: 80%;
+  }
+  #input_main {
+    height: 30px;
+  }
+  .Loupe-input {
+    position: relative;
+    left: 13px;
+    height: 29px;
+  }
+  #loupe-input svg {
+    width: 15px;
+    height: 15px;
+  }
+  .dropdown-container {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  .filter-btn {
+    padding: 10px 10px;
+    gap: 63px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .total-recipes {
+    margin-top: 175px;
+  }
+}
+@media (max-width: 424px) {
+  .text-warning {
+    font-size: 11px;
+    font-weight: 300;
+    margin-bottom: 0;
+  }
+  #logo {
+    top: 15px;
+    left: 10px;
+  }
+  #logo svg {
+    height: 15px;
+    width: 150px;
+    left: 20px;
+  }
+  .col-12 {
+    max-width: 80%;
+  }
+  #input_main {
+    height: 30px;
+  }
+  .Loupe-input {
+    position: relative;
+    left: 13px;
+    height: 29px;
+  }
+  #loupe-input svg {
+    width: 15px;
+    height: 15px;
+  }
+  .dropdown-container {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .filter-btn {
+    padding: 10px 10px;
+    gap: 63px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .total-recipes {
+    font-size: 18px;
+    margin-top: 115px;
+  }
+  .card img {
+    height: 200px;
+  }
+  .card-body p {
+    font-size: 11px;
+  }
+  .card-title {
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  article {
+    height: 540px;
+  }
+  .card h6 {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .Container_ingredient h6 {
+    font-size: 10px;
+  }
+}
