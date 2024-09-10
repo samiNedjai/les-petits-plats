@@ -1,3 +1,4 @@
+
 class RecipeCard {
   constructor(recipe) {
     this.recipe = recipe;
