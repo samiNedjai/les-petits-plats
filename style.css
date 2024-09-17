@@ -232,6 +232,7 @@ input[type="search"]::-ms-clear {
   display: flex;
   flex-wrap: wrap;
   margin-top: 10px;
+  gap: 40px;
 }
 
 .filter-badge {
