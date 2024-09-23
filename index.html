@@ -126,7 +126,7 @@
             </p>
           </div>
           <div class="col-12 text-center d-flex justify-content-center">
-            <div class="form-inline input-group w-100">
+            <form onsubmit="return false"  class="form-inline input-group w-100">
               <input
                 id="input_main"
                 class="form-control mr-sm-2"
@@ -168,7 +168,7 @@
                   />
                 </svg>
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </nav>
@@ -430,7 +430,7 @@
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/RecipeCard.js"></script>
     <script src="./scripts/Dropdowns.js"></script>
-    <script src="./scripts/searchRecipes.js"></script>
+    <script src="./scripts/searchRecipes.js" defer></script>
     <script src="./scripts/Utils.js"></script>
   </body>
 </html>

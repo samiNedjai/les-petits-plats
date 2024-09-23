@@ -1,15 +1,34 @@
-const searchInput = document.getElementById('input_main');
-searchInput.addEventListener('input', handleSearchUpdate);
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('input_main');
+  const searchForm = document.querySelector('form');
 
-// Initialisation du compteur de recettes
-updateRecipeCount(recipes.length);
+  // Vérifier si les éléments existent avant d'ajouter des écouteurs d'événements
+  if (searchInput && searchForm) {
+    // Empêche la soumission et le rechargement de la page
+    searchForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+    });
+
+    searchInput.addEventListener('input', function(event) {
+      event.preventDefault(); // Empêche tout comportement par défaut
+      handleSearchUpdate(event); // Appelle la fonction de mise à jour de la recherche
+    });
+
+    // Initialisation du compteur de recettes
+    updateRecipeCount(recipes.length);
+  } else {
+    console.error("L'élément avec l'ID 'input_main' ou le formulaire n'a pas été trouvé.");
+  }
+});
 
 /**
  * Gère la mise à jour des résultats en fonction de la recherche dans la barre principale
  * et des filtres actifs (ingrédients, appareils, ustensiles).
  * @returns {Array} - Les résultats filtrés à afficher.
  */
-function handleSearchUpdate() {
+function handleSearchUpdate(event) {
+  const searchInput = document.getElementById('input_main');
+  if (event) event.preventDefault();
   const keyword = searchInput.value.trim();
   const filters = {
     ingredients: selectedIngredients,
@@ -22,10 +41,11 @@ function handleSearchUpdate() {
     resetUI();  // Réinitialise l'interface avec toutes les recettes
     return;
   }
-
+  
   // Si l'entrée est inférieure à 3 caractères et qu'il n'y a pas de filtres, 
   //ne pas faire de recherch
-  if (keyword.length < 3 && !hasActiveFilters(filters)) return recipes;
+  if (keyword.length < 3 && !hasActiveFilters(filters)) 
+    return recipes;
 
   const filteredBySearchInput = searchRecipes(keyword);
   const finalResults = filterRecipes(filteredBySearchInput, filters);

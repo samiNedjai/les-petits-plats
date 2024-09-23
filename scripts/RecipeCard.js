@@ -35,7 +35,7 @@ class RecipeCard {
     return `
         <article class="col-mb-4">
                 <div class="card">
-                    <img src="${this.recipe.image}"  alt="${this.recipe.name}">
+                    <img src="./assets/Photos-les-petits-plats/${this.recipe.image}"  alt="${this.recipe.name}">
                     <span class="span_min">${this.recipe.time}min</span>
                     <div class="card-body" >
                         <h5 class="card-title">${this.recipe.name}</h5>
