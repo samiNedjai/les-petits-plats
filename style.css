@@ -66,7 +66,7 @@ main {
   line-height: normal;
   border-radius: 11px;
   background: #fff;
-  height: 72px;
+  height: 66px;
 }
 
 /* Masquer la croix par défaut dans l'input de recherche pour les navigateurs compatibles */
@@ -86,13 +86,13 @@ input[type="search"]::-ms-clear {
   background-color: #1b1b1b;
   z-index: 10;
   border-radius: 10px;
-  border-color: #1b1b1b;
   margin-left: -55px;
   font-size: 5px;
+  top: 7px;
 }
 .Loupe-input:hover {
   background-color: #ffd15b;
-  border-color: #ffd15b;
+  border-color: transparent;
 }
 .svgCroix {
   position: absolute;
@@ -154,16 +154,22 @@ input[type="search"]::-ms-clear {
 .dropdown-menu input {
   padding: 10px;
   margin: 10px;
-  width: calc(100% - 20px);
-  box-sizing: border-box;
+  width: calc(100% - 15px);
+  color: var(--Grey, #7a7a7a);
+  font-family: "Manrope";
+  font-size: 14px;
+  font-weight: 400;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  outline: none; 
 }
-.svgCroix2, .svgCroix2, .svgCroix2 {
+.svgCroix2 {
   display: none; /* Masquée par défaut */
   cursor: pointer;
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
   position: absolute;
-  right: 10px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -189,17 +195,6 @@ input[type="search"]::-ms-clear {
 /* .dropdown:hover .dropdown-menu {
   display: block;
 } */
-.input-group {
-  position: relative;
-  display: flex;
-  align-items: center;
-  color: var(--Grey, #7a7a7a);
-  font-family: "Manrope";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
 
 .form-control {
   padding-right: 60px; /* Pour faire de la place pour les icônes */
@@ -207,11 +202,11 @@ input[type="search"]::-ms-clear {
 }
 
 .input-icons {
-  display: flex;
-  align-items: center;
   position: absolute;
-  right: 17px;
-  bottom: 11px;
+  right: 20px; 
+  top: 40px;
+  transform: translateY(-50%);
+  display: flex;
 }
 
 .icon-button {
@@ -366,7 +361,9 @@ article {
   max-width: 192px;
   height: 32px;
 }
-
+.visually-hidden {
+  display: none;
+}
 /* respensive  */
 @media (min-width: 1024px) {
   .card {

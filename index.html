@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-    />
+    >
    
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-    />
+    >
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
-    />
-    <link rel="stylesheet" href="style.css" />
+    >
+    <link rel="stylesheet" href="style.css" >
     <title>Les Petits Plats</title>
   </head>
   <body>
@@ -28,7 +28,7 @@
           src="./assets/Photos-les-petits-plats/Background.png"
           class="img-fluid"
           alt="image de fond"
-        />
+        >
 
         <span id="logo">
           <svg
@@ -133,7 +133,7 @@
                 type="search"
                 placeholder="Rechercher une recette, un ingrédient, ..."
                 aria-label="Search"
-              />
+              >
               <svg
                 class="svgCroix"
                 xmlns="http://www.w3.org/2000/svg"
@@ -175,8 +175,8 @@
     </header>
 
     <main>
-      <!-- Ajout de la section filtres dans le main -->
       <section class="container-fluid mt-4" style="margin: 3%" >
+        <h2 class="visually-hidden">Section des filtres</h2>
         <div class="dropdown-container">
           <div class="dropdown" id="ingredientsDropdown">
             <button
@@ -202,8 +202,7 @@
               </svg>
             </button>
             <div class="dropdown-menu">
-              <div class="input-group">
-                <input class="form-control" id="searchIngredient" type="text" />
+                <input  id="searchIngredient" type="text">
                 <div class="input-icons">
                   <button class="icon-button clear-button" type="button">
                     <svg
@@ -248,9 +247,8 @@
                     </svg>
                   </button>
                 </div>
-              </div>
               <div id="ingredientsList" class="dropdown-item">
-                <!-- Les ingrédients s'afficheront ici -->
+                <!-- Les ingrédients  -->
               </div>
             </div>
           </div>
@@ -258,7 +256,7 @@
             <button
               class="btn filter-btn"
               type="button"
-              id="dropdownMenuButton1"
+              id="dropdownMenuButton2"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
@@ -278,8 +276,8 @@
               </svg>
             </button>
             <div class="dropdown-menu">
-              <div class="input-group">
-                <input class="form-control" id="searchAppareils" type="text" />
+              
+                <input  id="searchAppareils" type="text">
                 <div class="input-icons">
                   <button class="icon-button clear-button" type="button">
                     <svg
@@ -324,9 +322,9 @@
                     </svg>
                   </button>
                 </div>
-              </div>
+              
               <div id="appareilsList" class="dropdown-item">
-                <!-- Les appareils s'afficheront ici -->
+                <!-- Les appareils  -->
               </div>
             </div>
           </div>
@@ -334,7 +332,7 @@
             <button
               class="btn filter-btn"
               type="button"
-              id="dropdownMenuButton1"
+              id="dropdownMenuButton3"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
@@ -354,8 +352,8 @@
               </svg>
             </button>
             <div class="dropdown-menu">
-              <div class="input-group">
-                <input class="form-control" id="searchUstensiles" type="text" />
+             
+                <input  id="searchUstensiles" type="text">
                 <div class="input-icons">
                   <button class="icon-button clear-button" type="button">
                     <svg
@@ -400,9 +398,9 @@
                     </svg>
                   </button>
                 </div>
-              </div>
+             
               <div id="ustensilesList" class="dropdown-item">
-                <!-- Les ustensiles s'afficheront ici -->
+                <!-- Les ustensiles  -->
               </div>
             </div>
           </div>
@@ -414,15 +412,16 @@
         
       </section>
       <div class="selected-filters">
-        <!-- Les filtres sélectionnés seront ajoutés ici -->
+        <!-- Les filtres sélectionnés -->
      </div>
 
       <section style="margin: 3%">
+        <h2 class="visually-hidden">Section Cartes</h2>
         <div
           class="ContainerCards row row-cols-1 row-cols-md-3"
           id="ContainerCards"
         >
-          <!-- Les cartes de recettes seront injectées ici -->
+          <!-- Les cartes de recettes -->
         </div>
       </section>
     </main>

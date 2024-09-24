@@ -29,7 +29,39 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+
+/**
+ * Gère la visibilité et l'action des boutons de suppression (croix) pour les champs de recherche
+ * @param {string} inputId - L'ID de l'input à surveiller
+ * @param {string} clearButtonClass - La classe CSS de la croix à afficher
+ * @param {string} listId - L'ID de la liste associée à mettre à jour
+ */
+ 
+    function handleClearButton(inputId, clearButtonClass, listId) {
+        const inputElement = document.getElementById(inputId);
+        const clearButton = inputElement?.nextElementSibling?.querySelector(clearButtonClass);
+    
+        if (inputElement && clearButton) {
+            // Affiche ou masque la croix selon le contenu de l'input
+            inputElement.addEventListener('input', function() {
+                clearButton.style.display = inputElement.value ? 'block' : 'none';
+            });
+    
+            // Gère le clic sur la croix pour vider l'input et réinitialiser la liste
+            clearButton.addEventListener('click', function() {
+                inputElement.value = ''; // Vider le champ de recherche
+                clearButton.style.display = 'none'; // Masquer la croix
+    
+                // Si vous avez une logique pour mettre à jour la liste associée
+                filterDropdownList(inputId, listId);  // Mettre à jour la liste après suppression
+            });
+        }
+        
+    }
+    handleClearButton('searchIngredient', '.svgCroix2', 'ingredientsList');
+    handleClearButton('searchAppareils', '.svgCroix2', 'appareilsList');
+    handleClearButton('searchUstensiles', '.svgCroix2', 'ustensilesList');
+
 
 // Événement pour vider l'input de la recherche principale avec la croix .svgCroix
 const mainSearchInput = document.getElementById('input_main');
@@ -46,3 +78,4 @@ if (mainSearchInput && mainClearButton) {
         handleSearchUpdate();  // Mets à jour la recherche principale après la suppression
     });
 }
+});
