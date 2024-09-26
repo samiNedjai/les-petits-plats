@@ -11,11 +11,19 @@ function extractUniqueItems() {
   const allAppliances = new Set();
   const allUtensils = new Set();
 
-  recipes.forEach(recipe => {
-    recipe.ingredients.forEach(ingredient => allIngredients.add(ingredient.ingredient.toLowerCase().trim()));
+  for (let i = 0; i < recipes.length; i++) {
+    const recipe = recipes[i];
+
+    for (let j = 0; j < recipe.ingredients.length; j++) {
+      allIngredients.add(recipe.ingredients[j].ingredient.toLowerCase().trim());
+    }
+
     allAppliances.add(recipe.appliance.toLowerCase().trim());
-    recipe.ustensils.forEach(utensil => allUtensils.add(utensil.toLowerCase().trim()));
-  });
+
+    for (let k = 0; k < recipe.ustensils.length; k++) {
+      allUtensils.add(recipe.ustensils[k].toLowerCase().trim());
+    }
+  }
 
   return {
     ingredients: Array.from(allIngredients),
@@ -43,8 +51,10 @@ function populateDropdowns(data) {
  */
 function populateDropdown(listId, items, type) {
   const list = document.getElementById(listId);
-  list.innerHTML = ''; // Clear previous items
-  items.forEach(item => list.innerHTML += `<a href="#" class="dropdown-item ${type}-item">${item}</a>`);
+  list.innerHTML = ''; // Efface les éléments précédents
+  for (let i = 0; i < items.length; i++) {
+    list.innerHTML += `<a href="#" class="dropdown-item ${type}-item">${items[i]}</a>`;
+  }
 }
 
 /**
@@ -62,11 +72,17 @@ function updateDropdownsWithFilteredResults(results) {
   const filteredAppliances = new Set();
   const filteredUtensils = new Set();
 
-  results.forEach(recipe => {
-    recipe.ingredients.forEach(ingredient => filteredIngredients.add(ingredient.ingredient.toLowerCase().trim()));
+  for (let i = 0; i < results.length; i++) {
+    const recipe = results[i];
+    for (let j = 0; j < recipe.ingredients.length; j++) {
+      filteredIngredients.add(recipe.ingredients[j].ingredient.toLowerCase().trim());
+    }
     filteredAppliances.add(recipe.appliance.toLowerCase().trim());
-    recipe.ustensils.forEach(utensil => filteredUtensils.add(utensil.toLowerCase().trim()));
-  });
+
+    for (let k = 0; k < recipe.ustensils.length; k++) {
+      filteredUtensils.add(recipe.ustensils[k].toLowerCase().trim());
+    }
+  }
 
   populateDropdowns({
     ingredients: Array.from(filteredIngredients),
@@ -156,13 +172,14 @@ function addDropdownEventListeners() {
  * @param {String} type - Le type de filtre (ingredient, appliance, utensil).
  */
 function addDropdownClickEvent(className, type) {
-  document.querySelectorAll(`.${className}`).forEach(item => {
-    item.addEventListener('click', (event) => {
+  const items = document.querySelectorAll(`.${className}`);
+  for (let i = 0; i < items.length; i++) {
+    items[i].addEventListener('click', (event) => {
       event.preventDefault();
       const value = event.target.textContent.trim();
       updateSelectedFilters(type, value);
     });
-  });
+  }
 }
 
 /**
@@ -190,9 +207,11 @@ function addInputFilterEvent(inputId, listId) {
  */
 function filterDropdownList(inputId, listId) {
   const input = document.getElementById(inputId).value.toLowerCase();
-  document.querySelectorAll(`#${listId} a`).forEach(item => {
+  const items = document.querySelectorAll(`#${listId} a`);
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
     item.style.display = item.textContent.toLowerCase().includes(input) ? '' : 'none';
-  });
+  }
 }
 
 // Initialisation des événements et des dropdowns à la fin du chargement de la page
