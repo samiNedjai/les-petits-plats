@@ -44,9 +44,10 @@ function handleSearchUpdate(event) {
   
   // Si l'entrée est inférieure à 3 caractères et qu'il n'y a pas de filtres, 
   //ne pas faire de recherch
-  if (keyword.length < 3 && !hasActiveFilters(filters)) 
-    return recipes;
-
+  if (keyword.length < 3 && !hasActiveFilters(filters)) {
+    
+    return resetUI();
+  }
   const filteredBySearchInput = searchRecipes(keyword);
   const finalResults = filterRecipes(filteredBySearchInput, filters);
   updateUIWithSearchResults(finalResults); // Mise à jour de l'interface avec les résultats filtrés
