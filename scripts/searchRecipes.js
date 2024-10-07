@@ -21,6 +21,21 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+
+/**
+ * 
+ * @param {string} input 
+ * @returns 
+ */
+function escapeHTML(input) {
+  return input
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+}
+
 /**
  * Gère la mise à jour des résultats en fonction de la recherche dans la barre principale
  * et des filtres actifs (ingrédients, appareils, ustensiles).
@@ -29,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function handleSearchUpdate(event) {
   const searchInput = document.getElementById('input_main');
   if (event) event.preventDefault();
-  const keyword = searchInput.value.trim();
+  const keyword = escapeHTML(searchInput.value.trim());
+  console.log(keyword);
+  
   const filters = {
     ingredients: selectedIngredients,
     appliances: selectedAppliances,
