@@ -69,4 +69,4 @@ nedjai sami - Développeur de l'application Les Petits Plats
 
 Pour mieux comprendre le fonctionnement du moteur de recherche et les interactions entre les filtres, vous pouvez consulter le diagramme de flux ci-dessous :
 
-[Diagramme du flux de recherche (PDF)](diagramme_flux_recherche.pdf)
+[Diagramme du flux de recherche (PDF)](Fiche_investigation_fonctionnalité_moteur_de_recherche.pdf)
