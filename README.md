@@ -22,7 +22,7 @@
 
 1. **Cloner le dépôt**
    ```bash
-   git clone https://github.com/votre-nom-utilisateur/les-petits-plats.git
+   git clone https://github.com/samiNedjai/les-petits-plats.git
    cd les-petits-plats
 2. **Ouvrir le fichier HTML dans votre navigateur**
    ```bash
